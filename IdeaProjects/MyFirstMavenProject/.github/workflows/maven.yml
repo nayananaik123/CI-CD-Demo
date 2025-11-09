@@ -11,8 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Set up JDK
         uses: actions/setup-java@v4
@@ -21,4 +20,5 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -B package
+        working-directory: MyFirstMavenProject
